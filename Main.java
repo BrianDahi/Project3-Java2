@@ -45,15 +45,15 @@ public class Main
 		 * and will print as, "The value of Second now: 58"
 		 * Remember, this is the format only, value should be the current time.
 		 */
-		//int vlaueOfSecondNow = dateTimeOne.getValueOfSecond();
+		int vlaueOfSecondNow = dateTimeOne.getValueOfSecond();
 		/**
 		 * If vlaueOfSecondNow>55, program will sleep for 5 seconds.
 		 */		
 		
-		//if(vlaueOfSecondNow > allowedValueForSecond)
-		//{
-		//	dateTimeOne.sleepForFiveSec();
-		//}
+		if(vlaueOfSecondNow > allowedValueForSecond)
+		{
+			dateTimeOne.sleepForFiveSec();
+		}
 		
 		/**
 		 * Print the present date/time as:"Current Date/Time: 10/08/2019 03:03 PM"
@@ -61,10 +61,9 @@ public class Main
 		 * Here is a clue, month/day/year hour:minute am/pm 
 		 */
 		
-	   // dateTimeOne.dateTimeNow();	    
-	    //System.out.println("Time in the major Time Zone: ");	    
-	    
-	   // System.out.println("\nTime at other zones:");
+	    dateTimeOne.dateTimeNow();	    
+	    System.out.println("Time in the major Time Zone: ");	    
+	     System.out.println("\nTime at other zones:");
 	    /**
 		 * We have got time for our server but we have some major time zone in the world.
 		 * GMT is considered as zero degree (Greenwich Mean Time) which is GMT + 0 = GMT
@@ -81,9 +80,9 @@ public class Main
 			BST (90E): 2:14
 			CST (90W): 15:14
 		 */
-	    //dateTimeOne.dateTimeOfOtherCity();
-	   // System.out.println("\nDate/time at other zones:");
-	    //dateTimeOne.dateTimeNow();
+	    dateTimeOne.dateTimeOfOtherCity();
+	    System.out.println("\nDate/time at other zones:");
+	    dateTimeOne.dateTimeNow();
 	    
 	    /**
 		 * Now, you are familiar with different time zone.		 * 
@@ -94,8 +93,8 @@ public class Main
 			BST: 10/09/2019 02:26
 			CST: 10/08/2019 15:26
 		 */
-	    //dateTimeOne.dateTimeDifferentZone();
-	   // System.out.println("\n");	    
+	    dateTimeOne.dateTimeDifferentZone();
+	    System.out.println("\n");	    
 	    
 	    /**
 		 * Now add two more time zone like this: (These two may not be real time zone)
@@ -127,10 +126,10 @@ public class Main
 		 * Look at the three style (1, 3, 5). They are giving you different types of sorted list that are confusing.
 		 * We need to solve it; however, this section is complete, now we will move to the next section.
 		 */
-	    //dateTimeOne.timeZoneHashMap();
+	    dateTimeOne.timeZoneHashMap();
 	    
-	    //System.out.println("\n");
-	    //DateTimeTwo dateTimeTwo = new DateTimeTwo();
+	    System.out.println("\n");
+	    DateTimeTwo dateTimeTwo = new DateTimeTwo();
 		
 		
 		
