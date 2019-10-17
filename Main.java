@@ -16,7 +16,7 @@ import java.util.TreeMap;
 
 public class Main 
 {
-	public static void main(String[] args) throws IOException 
+	public static void main(String[] args) throws IOException, InterruptedException 
 	{
 		System.out.println("Hello");
 		/**
@@ -49,7 +49,7 @@ public class Main
 		/**
 		 * If vlaueOfSecondNow>55, program will sleep for 5 seconds.
 		 */		
-		
+// This works .	
 		if(vlaueOfSecondNow > allowedValueForSecond)
 		{
 			dateTimeOne.sleepForFiveSec();
@@ -61,7 +61,9 @@ public class Main
 		 * Here is a clue, month/day/year hour:minute am/pm 
 		 */
 		
-	    dateTimeOne.dateTimeNow();	    
+	    dateTimeOne.dateTimeNow();	 
+// I tested to see if I could get the seconds
+	    //System.out.println(dateTimeOne.getValueOfSecond());
 	    System.out.println("Time in the major Time Zone: ");	    
 	     System.out.println("\nTime at other zones:");
 	    /**
@@ -129,7 +131,7 @@ public class Main
 	    dateTimeOne.timeZoneHashMap();
 	    
 	    System.out.println("\n");
-	    DateTimeTwo dateTimeTwo = new DateTimeTwo();
+	   // DateTimeTwo dateTimeTwo = new DateTimeTwo();
 		
 		
 		
