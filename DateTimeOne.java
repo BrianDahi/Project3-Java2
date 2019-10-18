@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeUnit;
 import java.time.LocalDateTime;
 import java.util.Calendar;
-
+import java.util.HashMap;
 import java.util.TimeZone;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -23,9 +23,11 @@ public class DateTimeOne extends MesoDateTimeOneAbstract{
 	
 	ZonedDateTime CST = ZonedDateTime.now();
 	
-	ZonedDateTime nowInGMT = ZonedDateTime.now(ZoneId.of("GMT"));
+	ZonedDateTime GMT = ZonedDateTime.now(ZoneId.of("GMT"));
 	ZonedDateTime BST = ZonedDateTime.now(ZoneId.of("Europe/London"));
 
+	DateTimeFormatter justTime = DateTimeFormatter.ofPattern("HH:mm:ss");
+	
 	
 	   private int seconds = now.getSecond();
 	int getValueOfSecond() {
@@ -42,31 +44,49 @@ public class DateTimeOne extends MesoDateTimeOneAbstract{
 // I made this String to format the now 
 // Also so I can handle it better
 		String dTNow = dtf.format(now);
-		
-		String gmt = dtf.format(nowInGMT);
+//These where my test for GMT, BST, CST delete when project is done		
+		/*String gmt = dtf.format(GMT);
 		String bst = dtf.format(BST);
 		String cst = dtf.format(CST);
 		System.out.println("in gmt: " + gmt);
 		System.out.println("in bst: " + bst);
-		System.out.println("in cst: " + cst);
+		System.out.println("in cst: " + cst);*/
 		System.out.println(dTNow);
 		
 	}
 
 	void dateTimeOfOtherCity() {
+// just return city time 
 		
+		String gmtTime = justTime.format(GMT);
+		String bstTime = justTime.format(BST);
+		String cstTime = justTime.format(CST);
+		System.out.println("GMT: " + gmtTime);
+		System.out.println("BST (90E): " + bstTime);
+		System.out.println("CST (90W): " + cstTime);
+		
+	}
+	HashMap<String,String> timeZoneMap = new HashMap<String,String>();
+	
+	void dateTimeDifferentZone() {
+		String gmt = dtf.format(GMT);
+		String bst = dtf.format(BST);
+		String cst = dtf.format(CST);
+		timeZoneMap.put("GMT:", gmt);
+		timeZoneMap.put("BST:", bst);
+		timeZoneMap.put("CST:", cst);
+		
+		for (String zone: timeZoneMap.keySet()){
+            String key = zone.toString();
+            String value = timeZoneMap.get(zone).toString();  
+            System.out.println(key + " " + value);  
+} 
 		
 	}
 
 	
-	void dateTimeDifferentZone() {
-		
-		
-	}
-
-	@Override
 	void timeZoneHashMap() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 }
