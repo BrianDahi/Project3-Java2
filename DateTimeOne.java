@@ -176,7 +176,7 @@ public class DateTimeOne extends MesoDateTimeOneAbstract{
 			2019-10-08T15:48
 			2018-11-05T19:59 
 			 * */
-			System.out.println("Print Style 5:");
+			System.out.println("Print Style 5: Final sorted Array:");
 			Arrays.sort(localDateTime,  Collections.reverseOrder());
 			   for(int i = 0; i < localDateTime.length ; ++i) {
 				   System.out.println(localDateTime[i]);

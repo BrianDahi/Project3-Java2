@@ -18,7 +18,7 @@ public class Main
 {
 	public static void main(String[] args) throws IOException, InterruptedException 
 	{
-		System.out.println("Hello");
+		
 		/**
 		 * This project has been divided in sections. 
 		 * Keep in mind, the code given here all are related. Section has been created to give you 
@@ -129,9 +129,9 @@ public class Main
 		 * We need to solve it; however, this section is complete, now we will move to the next section.
 		 */
 	    dateTimeOne.timeZoneHashMap();
-	    
+	   
 	    System.out.println("\n");
-	   // DateTimeTwo dateTimeTwo = new DateTimeTwo();
+	    DateTimeTwo dateTimeTwo = new DateTimeTwo();
 		
 		
 		
@@ -152,8 +152,8 @@ public class Main
 		 * The tenth day of this month is THURSDAY and eighteenth is FRIDAY 
 		 */
 	    
-	   // dateTimeTwo.daysOfCurrentMonth();
-	   // System.out.println("\n");
+	    dateTimeTwo.daysOfCurrentMonth();
+	    System.out.println("\n");
 	    
 	    /**
 	     * Now make your above method generalize for any month and year
@@ -210,6 +210,13 @@ public class Main
 		 */
 	   // dateTimeTwo.dateHashMapSorted();
 	    //System.out.println("\nSorted map:");	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
 	    
 	    /**
 		 * Section 3
