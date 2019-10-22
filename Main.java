@@ -62,10 +62,8 @@ public class Main
 		 */
 		
 	    dateTimeOne.dateTimeNow();	 
-// I tested to see if I could get the seconds
-	    //System.out.println(dateTimeOne.getValueOfSecond());
 	    System.out.println("Time in the major Time Zone: ");	    
-	     System.out.println("\nTime at other zones:");
+	    System.out.println("\nTime at other zones:");
 	    /**
 		 * We have got time for our server but we have some major time zone in the world.
 		 * GMT is considered as zero degree (Greenwich Mean Time) which is GMT + 0 = GMT
@@ -164,11 +162,11 @@ public class Main
 			For the year (2020) and month (2), the fifteenth day is SATURDAY and the last day is SATURDAY
 			For the year (2000) and month (2), the fifteenth day is TUESDAY and the last day is TUESDAY
 		 */	    
-	   /* dateTimeTwo.daysOfAnyMonth(10, 2019);
+	    dateTimeTwo.daysOfAnyMonth(10, 2019);
 	    dateTimeTwo.daysOfAnyMonth(11, 2019);
 	    dateTimeTwo.daysOfAnyMonth(2, 2020);
 	    dateTimeTwo.daysOfAnyMonth(2, 2000);//many other values will be tested.
-	    System.out.println("\n");*/
+	    System.out.println("\n");
 	    
 	    /**
 	     * 
@@ -187,8 +185,8 @@ public class Main
 			2004 is a leap year, and Difference: 15 years, 9 months, and 7 days.
 		 * 
 		 */
-	   // dateTimeTwo.compareYear();
-	    //System.out.println("\n");	    
+	    dateTimeTwo.compareYear();
+	    System.out.println("\n");	    
 	    
 	    /**
 		 * Now print out your Hashmap. It may look like (This is the format, I didn't print whole map.
@@ -197,8 +195,8 @@ public class Main
 			2019-05-30:3
 		 */
 	    
-	   // dateTimeTwo.dateHashMap();
-	    //System.out.println("\nNow the Hashmap:");	    
+	    dateTimeTwo.dateHashMap();
+	    System.out.println("\nNow the Hashmap:");	    
 	    
 	    /**
 		 * Sort your Hashmap ascending order using keys. 
@@ -208,8 +206,8 @@ public class Main
 			1900-12-31:8
 			2000-12-15:5
 		 */
-	   // dateTimeTwo.dateHashMapSorted();
-	    //System.out.println("\nSorted map:");	    
+	    dateTimeTwo.dateHashMapSorted();
+	    System.out.println("\nSorted map:");	    
 	    
 	    
 	    

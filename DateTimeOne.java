@@ -93,47 +93,37 @@ public class DateTimeOne extends MesoDateTimeOneAbstract{
 
 	}
 		 
-//This method is my method for swaping and storeing the array 
-	 public void hashMapSwap()  {
-//Here we add the values of the first map and swap them
-// so key will now be value and value will now be key
-		for (String swap: timeZoneMap.keySet()){
-			String key = swap;
-			String value = timeZoneMap.get(swap); 
-			timeZoneSwap.put(value, key);
 
-			  
-		} 
-		/*for(String str : timeZoneSwap.keySet()) {
-			String tempKey = str;
-			String tempValue = timeZoneSwap.get(str);
-			System.out.println("did I swap?: " + tempKey + " " + tempValue);
-		}*/
-// Array that will take in the first hashmap the format needs to be "yyy/mm/ddThr:mm"
-// So make a for each loop con take both key and values and concatanate in this cause 
-// key is date value is time. 
-		
-		int i = 0;
-		for (String zone : timeZoneMap.keySet()){
-			String key = zone.toString();
-			String value = timeZoneMap.get(zone);  //Might need toString()
-			
-		
-			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm");
-			DateTimeFormatter formatterYearFirst = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
-			
-			//String formatDateTime = now.format(formatter);
-			LocalDateTime convertedValue = LocalDateTime.parse(value , formatter);
-			convertedValue.format(formatterYearFirst);
-			
-			localDateTime[i] = convertedValue ;
-			i++;
-		}
-		
-	}
 		void timeZoneHashMap() {
 //This is unsorted first hashmap with the zst and ast zones
-			
+			//Here we add the values of the first map and swap them
+			// so key will now be value and value will now be key
+					for (String swap: timeZoneMap.keySet()){
+						String key = swap;
+						String value = timeZoneMap.get(swap); 
+						timeZoneSwap.put(value, key);
+					} 
+					
+			// Array that will take in the first hashmap the format needs to be "yyy/mm/ddThr:mm"
+			// So make a for each loop con take both key and values and concatanate in this cause 
+			// key is date value is time. 
+					
+					int i = 0;
+					for (String zone : timeZoneMap.keySet()){
+						String key = zone.toString();
+						String value = timeZoneMap.get(zone);  //Might need toString()
+						
+					
+						DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm");
+						DateTimeFormatter formatterYearFirst = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
+						
+						//String formatDateTime = now.format(formatter);
+						LocalDateTime convertedValue = LocalDateTime.parse(value , formatter);
+						convertedValue.format(formatterYearFirst);
+						
+						localDateTime[i] = convertedValue ;
+						i++;
+					}
 			/** Now sort the first hashmap using keys and print. It should be look like: *
 			 * Print Style 1:
 			AST 10/01/2020 19:59
@@ -149,7 +139,7 @@ public class DateTimeOne extends MesoDateTimeOneAbstract{
 				System.out.println(keyOne + " " + valueOne);
 			}
 			//System.out.println("\n");
-			hashMapSwap();
+			//hashMapSwap();
 			//System.out.println("\n");
 			/*
 			 * Now sort the second hashmap using it keys and print like:
@@ -178,8 +168,8 @@ public class DateTimeOne extends MesoDateTimeOneAbstract{
 			 * */
 			System.out.println("Print Style 5: Final sorted Array:");
 			Arrays.sort(localDateTime,  Collections.reverseOrder());
-			   for(int i = 0; i < localDateTime.length ; ++i) {
-				   System.out.println(localDateTime[i]);
+			   for(int j = 0; j < localDateTime.length ; ++j) {
+				   System.out.println(localDateTime[j]);
 			   }
 		}
 	
