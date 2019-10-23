@@ -44,6 +44,7 @@ public class DateTimeOne extends MesoDateTimeOneAbstract{
 		return seconds;
 	}
 	void sleepForFiveSec() throws InterruptedException  {
+		
 		TimeUnit.SECONDS.sleep(5);
 
 	}
@@ -51,8 +52,9 @@ public class DateTimeOne extends MesoDateTimeOneAbstract{
 	void dateTimeNow() {
 		// I made this String to format the now 
 		// Also so I can handle it better
+		
 		String dTNow = dtf.format(now);
-
+		System.out.println("The value of Second now: " + seconds);
 		System.out.println(dTNow);
 
 	}
@@ -62,6 +64,7 @@ public class DateTimeOne extends MesoDateTimeOneAbstract{
 		String gmtTime = justTime.format(GMT);
 		String bstTime = justTime.format(BST);
 		String cstTime = justTime.format(CST);
+		System.out.println("Time on Server: " + cstTime );
 		System.out.println("GMT: " + gmtTime);
 		System.out.println("BST (90E): " + bstTime);
 		System.out.println("CST (90W): " + cstTime);
@@ -83,7 +86,7 @@ public class DateTimeOne extends MesoDateTimeOneAbstract{
 //This prints out the unsorted timezones with the key		
 		for (String zone : timeZoneMap.keySet()){
 			String key = zone;
-			String value = timeZoneMap.get(zone);  //Might need toString()
+			String value = timeZoneMap.get(zone);  
 			System.out.println(key + " " + value);  
 		} 
 // I added these two since the instructions made it sound like they didn't
