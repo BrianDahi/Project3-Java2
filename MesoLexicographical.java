@@ -15,20 +15,25 @@ public class MesoLexicographical extends MesoSortedAbstract
 	@Override
 	Map<String, Integer> sortedMap(HashMap<String, Integer> unsorted) {
 		
-		
+		tempMap = new TreeMap<>(tempMap);
 		for(String printOne : unsorted.keySet()) {
 			String keyOne = printOne;
 			Integer valueOne = unsorted.get(printOne);
 			tempMap.put(keyOne, valueOne);
+			
 		}
-		tempMap = new TreeMap<>(tempMap);
 		
+		for(String printOne : tempMap.keySet()) {
+			String keyTwo = printOne;
+			Integer valueOne = tempMap.get(printOne);
+			
+			System.out.println( keyTwo);
+		}
 		return tempMap;
 	}
-//I just wanted to test and make sure it sorted will delete later	
-	public void showMyTemp() {
-		System.out.println(sortedMap(mapSorted));
+	
 		
-	}
+	
+
 
 }
