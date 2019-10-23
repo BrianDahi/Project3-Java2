@@ -29,10 +29,10 @@ public class MesoEquivalent {
 	
 	public HashMap<String, Integer> calAsciiEqual() {
 //Find the avgAscii values that match the given and store in hashMap
-		int stIdInt = avgOfMeso(stId);
+		int stIdInt = avgOfMeso();
 		for(int i = 0; i <  fileList.size(); ++i ) {
 			String temp = fileList.get(i);
-			int tempInt = avgOfMeso(temp);
+			int tempInt = (int) avg(temp);
 			//System.out.println(temp);
 			//System.out.println(tempInt);
 			if(tempInt == stIdInt) {
@@ -46,20 +46,30 @@ public class MesoEquivalent {
 		return equalValues;
 	}
 	
-	public int avgOfMeso(String str) {
-		char a = str.charAt(0);
-		char b = str.charAt(1);
-		char c = str.charAt(2);
-		char d = str.charAt(3);
+	public int avgOfMeso() {
 		
-		
-		double num = (a + b + c + d)/4.0;
-		
-		double avg = Math.round(num);
-		
-		
-		int avgInt = (int)avg;
+		int avgInt = 0;
+		MesoAsciiCal m = new MesoAsciiCal(new MesoStation(stId));
+		avgInt = m.calAverage();		
+	
 		return avgInt;
+	}
+
+public double avg(String str) {
+	char a = str.charAt(0);
+	char b = str.charAt(1);
+	char c = str.charAt(2);
+	char d = str.charAt(3);
+	double avg2 = (a + b + c + d)/4.0;
+		int inTPart = (int) avg2;
+		double after = avg2 - inTPart;
+		
+		if(after >=  .25) {
+			return avg2 = Math.ceil(avg2);
+		}
+		else {
+			return avg2 = Math.floor(avg2);
+		}
 	}
 	
 	public void read() throws IOException{

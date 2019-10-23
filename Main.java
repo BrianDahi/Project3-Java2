@@ -257,7 +257,7 @@ public class Main
 		 */
 		System.out.println("\nFinally, the dates in HashMap are sorted using algorithm:\n");
 	    DateSortingUsingAlgorithm dateSortingUsingAlgorithm = new DateSortingUsingAlgorithm();	    
-	    
+	    dateSortingUsingAlgorithm.read();
 	    /**
 		 * Sort the hashmap in descending order
 		 * Output will be like:
@@ -267,7 +267,7 @@ public class Main
 		 */
 	    System.out.println("Sorting of the dates in descending order:");
 	    long startTime = System.nanoTime();  
-	  //  dateSortingUsingAlgorithm.dateHashMapSortedDescending();
+	    dateSortingUsingAlgorithm.dateHashMapSortedDescending();
 	    long estimatedTime = System.nanoTime() - startTime;
 	    
 	    /**
@@ -279,7 +279,7 @@ public class Main
 		 */
 	    System.out.println("Sorting of the dates in ascending order:");
 	    long startTime2 = System.nanoTime();  
-	   // dateSortingUsingAlgorithm.dateHashMapSorted();
+	    dateSortingUsingAlgorithm.dateHashMapSorted();
 	    long estimatedTime2 = System.nanoTime() - startTime2;
 	    
 	    System.out.println("\nExecution time for case 1: " + estimatedTime);

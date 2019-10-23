@@ -9,7 +9,7 @@ public class MesoLexicographical extends MesoSortedAbstract
 	public MesoLexicographical(HashMap<String, Integer> asciiVal) {
 		mapSorted = asciiVal;
 		sortedMap(asciiVal);
-		//System.out.println(mapSorted);
+		
 	}
 
 	@Override
@@ -25,9 +25,9 @@ public class MesoLexicographical extends MesoSortedAbstract
 		
 		for(String printOne : tempMap.keySet()) {
 			String keyTwo = printOne;
-			Integer valueOne = tempMap.get(printOne);
+			Integer valueTwo = tempMap.get(printOne);
 			
-			System.out.println( keyTwo);
+			System.out.println(keyTwo);
 		}
 		return tempMap;
 	}
