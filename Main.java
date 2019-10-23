@@ -18,7 +18,6 @@ public class Main
 {
 	public static void main(String[] args) throws IOException, InterruptedException 
 	{
-		
 		/**
 		 * This project has been divided in sections. 
 		 * Keep in mind, the code given here all are related. Section has been created to give you 
@@ -30,8 +29,6 @@ public class Main
 		int sectionCount = 0;		
 		int allowedValueForSecond = 55;
 		DateTimeOne dateTimeOne = new DateTimeOne();
-		
-		
 		/**
 		 * Since in this project we will work with date and time, therefore, at first we want to ensure
 		 * that you will not get caught by Zylab with a wrong result, if you submit at the end of any 
@@ -49,7 +46,7 @@ public class Main
 		/**
 		 * If vlaueOfSecondNow>55, program will sleep for 5 seconds.
 		 */		
-// This works .	
+		
 		if(vlaueOfSecondNow > allowedValueForSecond)
 		{
 			dateTimeOne.sleepForFiveSec();
@@ -61,8 +58,9 @@ public class Main
 		 * Here is a clue, month/day/year hour:minute am/pm 
 		 */
 		
-	    dateTimeOne.dateTimeNow();	 
-	    System.out.println("Time in the major Time Zone: ");	    
+	    dateTimeOne.dateTimeNow();	    
+	    //System.out.println("Time in the major Time Zone: ");	    
+	    
 	    System.out.println("\nTime at other zones:");
 	    /**
 		 * We have got time for our server but we have some major time zone in the world.
@@ -82,7 +80,7 @@ public class Main
 		 */
 	    dateTimeOne.dateTimeOfOtherCity();
 	    System.out.println("\nDate/time at other zones:");
-	    dateTimeOne.dateTimeNow();
+	    //dateTimeOne.dateTimeNow();
 	    
 	    /**
 		 * Now, you are familiar with different time zone.		 * 
@@ -127,18 +125,9 @@ public class Main
 		 * We need to solve it; however, this section is complete, now we will move to the next section.
 		 */
 	    dateTimeOne.timeZoneHashMap();
-	   
+	    
 	    System.out.println("\n");
 	    DateTimeTwo dateTimeTwo = new DateTimeTwo();
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	    /**
 		 * Section 2
 		 * 
@@ -209,40 +198,33 @@ public class Main
 	    dateTimeTwo.dateHashMapSorted();
 	    System.out.println("\nSorted map:");	    
 	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
 	    /**
 		 * Section 3
 		 * For details first see the PDF Section 3 Extension
 		 * 
 		 */
-		/*String stId = "OKCE";
+		String stId = "OKCE";
 		MesoAsciiCal asciiAverage = new MesoAsciiCal(new MesoStation(stId));
 		int asciiAvg = asciiAverage.calAverage();		
 
 		HashMap<String, Integer> asciiVal = new HashMap<String, Integer>();
 		asciiVal.put(stId, asciiAvg);
 		System.out.print("ASCII average: ");
-		//System.out.println(asciiAvg);*/
+		//System.out.println(asciiAvg);
 		
 	    /**
 	     * Calculate and print the ASCII average as per PDF. This value for NRMN as a sample.
 		 * Output: 79
 		 */
-		/*System.out.println(asciiVal.get(stId));		
+		System.out.println(asciiVal.get(stId));		
 		
-		MesoEquivalent mesoEqual = new MesoEquivalent(stId);	*/	
+		MesoEquivalent mesoEqual = new MesoEquivalent(stId);		
 	    /**
 		 * Print the content of the hashmap
 		 * Output: 
 		 * {NRMN=79, OKMU=79, STIL=79, JAYX=79, NEWP=79, WOOD=79, STUA=79, WATO=79, MAYR=79, MRSH=79, WAUR=79}
 		 */
-	/*	System.out.println("Stations are: "+ mesoEqual.calAsciiEqual());
+		System.out.println("Stations are: "+ mesoEqual.calAsciiEqual());
 		
 		System.out.println("\nUnsroted Hashmap:");
 		asciiVal=mesoEqual.calAsciiEqual();		
@@ -250,15 +232,15 @@ public class Main
 		{
 			//System.out.println(stIds + " " + asciiVal.get(stIds));
 			//Printing the unsorted map
-		    System.out.println(stIds + " " + asciiVal.get(stIds));	*/	    
+		    System.out.println(stIds + " " + asciiVal.get(stIds));		    
 		}		
 		
 	    /**
 		 * Sort your hashmap and print here
 		 */
 		//System.out.print("##");
-		//System.out.println("\nThe sorted map:");
-		//new MesoLexicographical(asciiVal);		
+		System.out.println("\nThe sorted map:");
+		new MesoLexicographical(asciiVal);		
 		
 	    /**
 		 * Section 4
@@ -273,8 +255,8 @@ public class Main
 		 * You are free to choose any algorithm you prefer to implement such as Quick sort, Bubble
 		 * sort, Radix sort, Insertion sort etc.
 		 */
-		//System.out.println("\nFinally, the dates in HashMap are sorted using algorithm:\n");
-	    //DateSortingUsingAlgorithm dateSortingUsingAlgorithm = new DateSortingUsingAlgorithm();	    
+		System.out.println("\nFinally, the dates in HashMap are sorted using algorithm:\n");
+	    DateSortingUsingAlgorithm dateSortingUsingAlgorithm = new DateSortingUsingAlgorithm();	    
 	    
 	    /**
 		 * Sort the hashmap in descending order
@@ -283,10 +265,10 @@ public class Main
 		 * 2021-03-31
 		 * 2020-12-31
 		 */
-	    //System.out.println("Sorting of the dates in descending order:");
-	    //long startTime = System.nanoTime();  
-	    //dateSortingUsingAlgorithm.dateHashMapSortedDescending();
-	    //long estimatedTime = System.nanoTime() - startTime; 
+	    System.out.println("Sorting of the dates in descending order:");
+	    long startTime = System.nanoTime();  
+	  //  dateSortingUsingAlgorithm.dateHashMapSortedDescending();
+	    long estimatedTime = System.nanoTime() - startTime;
 	    
 	    /**
 		 * Sort the hashmap in ascending order.		 * 
@@ -295,12 +277,13 @@ public class Main
 		 * 2012-10-10
 		 * 2014-02-28
 		 */
-	   /* System.out.println("Sorting of the dates in ascending order:");
+	    System.out.println("Sorting of the dates in ascending order:");
 	    long startTime2 = System.nanoTime();  
-	    dateSortingUsingAlgorithm.dateHashMapSorted();
+	   // dateSortingUsingAlgorithm.dateHashMapSorted();
 	    long estimatedTime2 = System.nanoTime() - startTime2;
 	    
 	    System.out.println("\nExecution time for case 1: " + estimatedTime);
-	    System.out.println("Execution time for case 2: " + estimatedTime2);*/
+	    System.out.println("Execution time for case 2: " + estimatedTime2);
 	    //You can see the difference in two execution times, why? explain in your documentation.
 	}
+}
