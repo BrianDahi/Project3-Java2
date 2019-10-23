@@ -1,20 +1,53 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.DateFormatSymbols;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.YearMonth;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DateTimeTwo {
 
-	 Calendar ca = Calendar.getInstance(); 
+	Calendar ca = Calendar.getInstance(); 
+     Map<LocalDate, Integer> readDate = new HashMap<>();
      
+     public void read(String filename) throws IOException{
+ 		// creating object for FileReader and taking in .txt
+ 		
+ 		FileReader file = new FileReader("Dates.txt");
+ 		//info stores lines from .txt
+ 		String info;
+ 		BufferedReader br = new BufferedReader(file);
+ 		String parse = "";
+ 		String afterParse = "";
+ 		info = br.readLine();
+ 		int i = 0;
+ 		while(info != null ) {
+ 			parse =  (String) info.subSequence(0,10);
+ 			
+ 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM.dd.yyyy");
+ 			LocalDate hashKey = LocalDate.parse(parse, formatter);
+ 			DateTimeFormatter formatterYearFirst = DateTimeFormatter.ofPattern("yyyy.MM.dd");
+ 			hashKey.format(formatterYearFirst);
+ 			readDate.put(hashKey, i);
+ 			System.out.println(hashKey);
+ 			System.out.println(readDate);
+ 			i++;
+ 			
+ 			info = br.readLine();
+ 		}
+ 		br.close();
+ 		
+     }
 
-	
-	
-	
-	
-	//Read the text file: Dates.txt
-	void daysOfCurrentMonth() {
+	 //Read the text file: Dates.txt
+	public void daysOfCurrentMonth() {
 		String tenthDay;
 		String eighteenthDay;
 		YearMonth ym = YearMonth.of(2019, 10);
@@ -40,8 +73,14 @@ public class DateTimeTwo {
 	public void dateHashMap()
 	{
 		
+		for(LocalDate printOne : readDate.keySet()) {
+			String keyOne = printOne.toString();
+			Integer valueOne = readDate.get(printOne);
+			System.out.println();
+		}
 	}
 	public void dateHashMapSorted() {
 		
 	}
-}
+	
+	}
