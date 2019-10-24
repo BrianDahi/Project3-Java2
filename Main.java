@@ -16,7 +16,7 @@ import java.util.TreeMap;
 
 public class Main 
 {
-	public static void main(String[] args) throws IOException, InterruptedException 
+	public static void main(String[] args) throws IOException
 	{
 		/**
 		 * This project has been divided in sections. 
@@ -257,7 +257,7 @@ public class Main
 		 */
 		System.out.println("\nFinally, the dates in HashMap are sorted using algorithm:\n");
 	    DateSortingUsingAlgorithm dateSortingUsingAlgorithm = new DateSortingUsingAlgorithm();	    
-	    dateSortingUsingAlgorithm.read();
+	    
 	    /**
 		 * Sort the hashmap in descending order
 		 * Output will be like:

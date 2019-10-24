@@ -12,21 +12,32 @@ public class MesoAsciiCal extends MesoAsciiAbstract
 	}
 	
 	int calAverage() {
-		
-		
-		char a = str.charAt(0);
-		char b = str.charAt(1);
-		char c = str.charAt(2);
-		char d = str.charAt(3);
-		
-		char e = newStid.charAt(0);
-		char f = newStid.charAt(1);
-		char g = newStid.charAt(2);
-		char h = newStid.charAt(3);
-		double stidGiven = (a + b + c + d )/4.0;
+		char[] charArray = new char[3];
+		charArray = str.toCharArray();
+		char[] charArray2 = new char[3];
+		charArray2 = newStid.toCharArray();
+		int aInt = 0;
+		int bInt = 0;
+		int n = charArray.length;
+		for(int i = 0; i< charArray.length ; ++i) {
+			aInt += charArray[i];
+			bInt += charArray2[i];
+			
+		}
+//		char a = str.charAt(0);
+//		char b = str.charAt(1);
+//		char c = str.charAt(2);
+//		char d = str.charAt(3);
+//		
+//		char e = newStid.charAt(0);
+//		char f = newStid.charAt(1);
+//		char g = newStid.charAt(2);
+//		char h = newStid.charAt(3);
+		double stidGiven = (aInt)/4.0;
+		//double stidGiven = (a + b + c + d )/4.0;
 		double stidGivenAvg = avg(stidGiven);
-		
-		double stidPrivate = (e + f + g + h)/4.0;
+		double stidPrivate = (bInt)/4.0;
+	//	double stidPrivate = (e + f + g + h)/4.0;
 		double stidPrivateAvg = avg(stidPrivate);
 		
 		double avgOfBoth = (stidGivenAvg + stidPrivateAvg)/2.0;

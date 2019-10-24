@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
+
 
 public class MesoEquivalent {
 	String stId;
@@ -33,8 +33,7 @@ public class MesoEquivalent {
 		for(int i = 0; i <  fileList.size(); ++i ) {
 			String temp = fileList.get(i);
 			int tempInt = (int) avg(temp);
-			//System.out.println(temp);
-			//System.out.println(tempInt);
+			
 			if(tempInt == stIdInt) {
 				equalValues.put(temp,stIdInt);
 

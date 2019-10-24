@@ -25,7 +25,7 @@ public class MesoLexicographical extends MesoSortedAbstract
 		
 		for(String printOne : tempMap.keySet()) {
 			String keyTwo = printOne;
-			Integer valueTwo = tempMap.get(printOne);
+			//Integer valueTwo = tempMap.get(printOne);
 			
 			System.out.println(keyTwo);
 		}

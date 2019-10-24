@@ -22,7 +22,8 @@ public class DateTimeOne extends MesoDateTimeOneAbstract{
 	 * needed for this project going to make a new project and test how they work.*/
 	//I am using the DatTimeFormatter for easy formating
 	// and LocalDateTime will get the date and time now.
-	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm");  
+	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm"); 
+	DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm a"); 
 	//this gives local time and date
 	LocalDateTime now = LocalDateTime.now();  
 
@@ -43,9 +44,12 @@ public class DateTimeOne extends MesoDateTimeOneAbstract{
 
 		return seconds;
 	}
-	void sleepForFiveSec() throws InterruptedException  {
-		
+	void sleepForFiveSec()    {
+		try {
 		TimeUnit.SECONDS.sleep(5);
+		}catch(InterruptedException e) {
+			System.out.println("Seconds failed");
+		}
 
 	}
 
@@ -53,9 +57,9 @@ public class DateTimeOne extends MesoDateTimeOneAbstract{
 		// I made this String to format the now 
 		// Also so I can handle it better
 		
-		String dTNow = dtf.format(now);
+		String dTNow = dtf2.format(now);
 		System.out.println("The value of Second now: " + seconds);
-		System.out.println(dTNow);
+		System.out.println("Current Date/Time: " + dTNow);
 
 	}
 
@@ -79,20 +83,20 @@ public class DateTimeOne extends MesoDateTimeOneAbstract{
 		String zst = dtf.format(ZST);
 		String ast = dtf.format(AST);
 		
-		timeZoneMap.put("GMT:", gmt);
-		timeZoneMap.put("BST:", bst);
-		timeZoneMap.put("CST:", cst);
+		timeZoneMap.put("GMT", gmt);
+		timeZoneMap.put("BST", bst);
+		timeZoneMap.put("CST", cst);
 		
 //This prints out the unsorted timezones with the key		
 		for (String zone : timeZoneMap.keySet()){
 			String key = zone;
 			String value = timeZoneMap.get(zone);  
-			System.out.println(key + " " + value);  
+			System.out.println(key + ": " + value);  
 		} 
 // I added these two since the instructions made it sound like they didn't
 // need to be printed on this go.
-		timeZoneMap.put("ZST:", zst);
-		timeZoneMap.put("AST:", ast);
+		timeZoneMap.put("ZST", zst);
+		timeZoneMap.put("AST", ast);
 
 	}
 		 
