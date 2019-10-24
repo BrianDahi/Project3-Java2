@@ -43,10 +43,7 @@ public class DateTimeTwo {
 	
 	public void compareYear() throws IOException{
 		
-		//String dTNow = dtf.format(now);
-		//System.out.println(dTNow);
-		
-		//Date startDate = dTNow;
+	
 		read();
 		for(LocalDate printOne : readDate.keySet()) {
 			LocalDate keyOne = printOne;
