@@ -3,16 +3,7 @@
  * @version 2019-10-08
 */
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.TreeMap;
 
 public class Main 
 {
@@ -226,8 +217,9 @@ public class Main
 		 */
 		System.out.println("Stations are: "+ mesoEqual.calAsciiEqual());
 		
-		System.out.println("\nUnsroted Hashmap:");
-		asciiVal=mesoEqual.calAsciiEqual();		
+		System.out.println("\nUnsorted Hashmap:");
+		asciiVal=mesoEqual.calAsciiEqual();	
+		
 		for (String stIds : asciiVal.keySet()) 
 		{
 			//System.out.println(stIds + " " + asciiVal.get(stIds));

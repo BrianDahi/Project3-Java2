@@ -9,43 +9,37 @@ public class MesoEquivalent {
 	String stId;
 	HashMap<String, Integer> equalValues = new HashMap<>();
 	ArrayList<String> fileList = new ArrayList<String>();
-	// MesoAsciiCal  calcAvg = new MesoAsciiCal();
+	int avg;
+
 	public MesoEquivalent() {
 
 	}
 
-	public MesoEquivalent(String str) {
+	public MesoEquivalent(String str) throws IOException {
+		equalValues = new HashMap<>();
+		fileList = read();
 		stId = str;
-		try{
-			read();
-		}
-		catch(Exception e) {
-			System.out.println("wrong in PosAvg");
-		}
-
+		//avg =  avgOfMeso(str);
+		avg = new MesoAsciiCal(new MesoStation(str)).calAverage();
 	}
-
-
 
 	public HashMap<String, Integer> calAsciiEqual() {
 		//Find the avgAscii values that match the given and store in hashMap
-		int stIdInt = avgOfMeso();
+		//int stIdInt = avgOfMeso();
 		for(int i = 0; i <  fileList.size(); ++i ) {
+			//This stores the mesonet stations to be passed to method for avg
 			String temp = fileList.get(i);
-			int tempInt = (int) avg(temp);
-			
-			if(tempInt == stIdInt) {
-				equalValues.put(temp,stIdInt);
+			int temp_1 = new MesoAsciiCal(new MesoStation(temp)).calAverage();
+
+			if(temp_1 == avg) {
+				equalValues.put(temp,avg);
 
 			}
-
-
-
 		}
 		return equalValues;
 	}
 
-	public int avgOfMeso() {
+	public int avgOfMeso(String stId) {
 
 		int avgInt = 0;
 		MesoAsciiCal m = new MesoAsciiCal(new MesoStation(stId));
@@ -54,48 +48,38 @@ public class MesoEquivalent {
 		return avgInt;
 	}
 
-	public double avg(String str) {
-		char a = str.charAt(0);
-		char b = str.charAt(1);
-		char c = str.charAt(2);
-		char d = str.charAt(3);
-		double avg2 = (a + b + c + d)/4.0;
-		int inTPart = (int) avg2;
-		double after = avg2 - inTPart;
-
-		if(after >=  .25) {
-			return avg2 = Math.ceil(avg2);
-		}
-		else {
-			return avg2 = Math.floor(avg2);
-		}
-	}
-
-	public void read() throws IOException{
+	//	
+	public ArrayList<String >read() throws IOException{
 		// creating object for FileReader and taking in .txt
 
 		FileReader file = new FileReader("Mesonet.txt");
+		fileList = new ArrayList<String>();
 		//info stores lines from .txt
 		String info;
 		BufferedReader br = new BufferedReader(file);
 		String parse = "";
 		String parse2 = "";
+
 		info = br.readLine();
 		info = br.readLine();
 		info = br.readLine();
 
 		while(info != null ) {
-			//parse =  (String) info.subSequence(2,6);
+
 			parse = info.trim();
 			parse2 = (String) parse.subSequence(0,4);
-			fileList.add(parse2);
 
+			fileList.add(parse2);
+			//System.out.println(parse2);
 			info = br.readLine();
 		}
 		br.close();
+		return fileList;
 
 	}
 
 
 
 }
+
+

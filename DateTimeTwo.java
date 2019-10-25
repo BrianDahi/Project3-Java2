@@ -5,7 +5,6 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -96,7 +95,7 @@ public class DateTimeTwo {
 		String info;
 		BufferedReader br = new BufferedReader(file);
 		String parse = "";
-		String afterParse = "";
+		//String afterParse = "";
 		info = br.readLine();
 		int i = 1;
 		while(info != null ) {

@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
+
 import java.util.HashMap;
-//import java.time.LocalDate;
+
 public class DateSortingUsingAlgorithm {
 
 
@@ -50,7 +50,7 @@ public class DateSortingUsingAlgorithm {
 		for(LocalDate printOne : map.keySet()) {
 			
 			LocalDate keyOne = printOne;
-			Integer valueOne = map.get(printOne);
+			//Integer valueOne = map.get(printOne);
 			arrayMap[i] = keyOne;
 			++i;
 		}
@@ -113,7 +113,7 @@ public class DateSortingUsingAlgorithm {
 
 	public String[] ascend(String[] arr) {
 		String temp;
-		String[] finalArray = new String[arrayMap.length];
+		//String[] finalArray = new String[arrayMap.length];
 		for (int j = 0; j < arr.length; j++) {
 			for (int i = j + 1; i < arr.length; i++) {
 				// comparing adjacent strings
@@ -130,7 +130,7 @@ public class DateSortingUsingAlgorithm {
 	}
 	public String[] decend(String[] arr) {
 		String temp;
-		String[] finalArray = new String[arrayMap.length];
+		//String[] finalArray = new String[arrayMap.length];
 		for (int j = 0; j < arr.length; j++) {
 			for (int i = j + 1; i < arr.length; i++) {
 				

@@ -1,13 +1,10 @@
 import java.time.*; 
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.TreeMap;
 import java.time.LocalDateTime;
 
@@ -117,7 +114,7 @@ public class DateTimeOne extends MesoDateTimeOneAbstract{
 					
 					int i = 0;
 					for (String zone : timeZoneMap.keySet()){
-						String key = zone.toString();
+						//String key = zone.toString();
 						String value = timeZoneMap.get(zone);  //Might need toString()
 						
 					

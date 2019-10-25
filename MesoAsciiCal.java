@@ -5,62 +5,51 @@ public class MesoAsciiCal extends MesoAsciiAbstract
 	String str ;
 	private String newStid = "NRMN";
 	public MesoAsciiCal() {
-		
+
 	}
 	public MesoAsciiCal(MesoStation mesoStation) {
 		str = mesoStation.getStID();
+		calAverage();
+
 	}
-	
+
 	int calAverage() {
-		char[] charArray = new char[3];
-		charArray = str.toCharArray();
-		char[] charArray2 = new char[3];
-		charArray2 = newStid.toCharArray();
-		int aInt = 0;
-		int bInt = 0;
-		int n = charArray.length;
+
+		char[] charArray = new char[4]; // char array for given stid
+		charArray = str.toCharArray(); // convert it to char array
+		char[] charArray2 = new char[4];// for NRMN
+		charArray2 = newStid.toCharArray(); // convert to stid
+		int aInt = 0; // the ascii of given stid
+		int bInt = 0;// the ascii of NRMN
+		int realAvg = 0;
+
 		for(int i = 0; i< charArray.length ; ++i) {
-			aInt += charArray[i];
-			bInt += charArray2[i];
-			
+			aInt += charArray[i]; // compute ascii sum of given stid
+			bInt += charArray2[i]; // compute ascii sum for NMRN
 		}
-//		char a = str.charAt(0);
-//		char b = str.charAt(1);
-//		char c = str.charAt(2);
-//		char d = str.charAt(3);
-//		
-//		char e = newStid.charAt(0);
-//		char f = newStid.charAt(1);
-//		char g = newStid.charAt(2);
-//		char h = newStid.charAt(3);
-		double stidGiven = (aInt)/4.0;
-		//double stidGiven = (a + b + c + d )/4.0;
-		double stidGivenAvg = avg(stidGiven);
-		double stidPrivate = (bInt)/4.0;
-	//	double stidPrivate = (e + f + g + h)/4.0;
-		double stidPrivateAvg = avg(stidPrivate);
-		
-		double avgOfBoth = (stidGivenAvg + stidPrivateAvg)/2.0;
-		double rounded = Math.ceil(avgOfBoth);
-		int roundedInt = (int) rounded;
-		
-		
-		return roundedInt;
+
+		//This takes the avg of the sum of the String and passes to get the rounded
+		//verison
+		double stidGiven = (aInt)/4.0; // get the averge of given stid
+		double temp_AvgFloor = Math.floor(stidGiven);
+		if(stidGiven - temp_AvgFloor >= .25)
+		{
+			realAvg = (int) Math.ceil(stidGiven);
+
+		}else {
+			realAvg = (int) Math.floor(stidGiven);
+		}
+
+
+		int avgOfBoth =  (realAvg + 79)/2; 
+
+
+
+		return  avgOfBoth;
 	}
-	public double avg(double avg2) {
-		
-		int inTPart = (int) avg2;
-		double after = avg2 - inTPart;
-		
-		if(after >=  .25) {
-			return avg2 = Math.ceil(avg2);
-		}
-		else {
-			return avg2 = Math.floor(avg2);
-		}
-	}
-	
-   
+
+
+
+
 }
 
- 
