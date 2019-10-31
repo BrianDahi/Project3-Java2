@@ -142,9 +142,7 @@ public class DateTimeOne extends MesoDateTimeOneAbstract{
 				String valueOne = timeZoneMap.get(printOne);
 				System.out.println(keyOne + " " + valueOne);
 			}
-			//System.out.println("\n");
-			//hashMapSwap();
-			//System.out.println("\n");
+		
 			/*
 			 * Now sort the second hashmap using it keys and print like:
 			 * Print Style 3:
@@ -158,7 +156,7 @@ public class DateTimeOne extends MesoDateTimeOneAbstract{
 			timeZoneSwap = new TreeMap<>(timeZoneSwap);
 			for (String printTwo : timeZoneSwap.keySet()){
 				String keyTwo = printTwo;
-				//String valueTwo = timeZoneSwap.get();  
+				 
 				System.out.println(keyTwo);  
 			} 
 			

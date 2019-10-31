@@ -12,7 +12,7 @@ import java.util.TreeMap;
 
 public class DateTimeTwo {
 
-	Calendar ca = Calendar.getInstance(); 
+	
 	Map<LocalDate, Integer> readDate = new HashMap<>();
 	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");  
 	//this gives local time and date
@@ -47,7 +47,7 @@ public class DateTimeTwo {
 		for(LocalDate printOne : readDate.keySet()) {
 			LocalDate keyOne = printOne;
 			int year = keyOne.getYear();
-			//System.out.println(keyOne.getYear());
+			
 			Period period = Period.between(keyOne, now);
 			
 		   	
@@ -95,7 +95,7 @@ public class DateTimeTwo {
 		String info;
 		BufferedReader br = new BufferedReader(file);
 		String parse = "";
-		//String afterParse = "";
+		
 		info = br.readLine();
 		int i = 1;
 		while(info != null ) {
@@ -106,7 +106,7 @@ public class DateTimeTwo {
 			DateTimeFormatter formatterYearFirst = DateTimeFormatter.ofPattern("yyyy.MM.dd");
 			hashKey.format(formatterYearFirst);
 			readDate.put(hashKey, i);
-			//System.out.println(hashKey);
+			
 
 			++i;
 
@@ -114,7 +114,7 @@ public class DateTimeTwo {
 		}
 		br.close();
 		System.out.println("");
-		//readDate = new TreeMap<>(readDate);
+		
 		
 
 

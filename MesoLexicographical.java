@@ -5,9 +5,9 @@ import java.util.TreeMap;
 public class MesoLexicographical extends MesoSortedAbstract
 {
 	Map<String, Integer> mapSorted = new HashMap<>();
-	//Map<String, Integer> tempMap = new HashMap<>();
+	
 	public MesoLexicographical(HashMap<String, Integer> asciiVal) {
-		//mapSorted = asciiVal;
+		
 		sortedMap(asciiVal);
 		
 	}

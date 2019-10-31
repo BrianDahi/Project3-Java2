@@ -19,13 +19,13 @@ public class MesoEquivalent {
 		equalValues = new HashMap<>();
 		fileList = read();
 		stId = str;
-		//avg =  avgOfMeso(str);
+		
 		avg = new MesoAsciiCal(new MesoStation(str)).calAverage();
 	}
 
 	public HashMap<String, Integer> calAsciiEqual() {
 		//Find the avgAscii values that match the given and store in hashMap
-		//int stIdInt = avgOfMeso();
+		
 		for(int i = 0; i <  fileList.size(); ++i ) {
 			//This stores the mesonet stations to be passed to method for avg
 			String temp = fileList.get(i);
@@ -39,14 +39,7 @@ public class MesoEquivalent {
 		return equalValues;
 	}
 
-	public int avgOfMeso(String stId) {
 
-		int avgInt = 0;
-		MesoAsciiCal m = new MesoAsciiCal(new MesoStation(stId));
-		avgInt = m.calAverage();		
-
-		return avgInt;
-	}
 
 	//	
 	public ArrayList<String >read() throws IOException{
@@ -70,7 +63,7 @@ public class MesoEquivalent {
 			parse2 = (String) parse.subSequence(0,4);
 
 			fileList.add(parse2);
-			//System.out.println(parse2);
+			
 			info = br.readLine();
 		}
 		br.close();

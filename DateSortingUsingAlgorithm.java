@@ -43,14 +43,14 @@ public class DateSortingUsingAlgorithm {
 		br.close();
 
 	}
-	public void changeToArrayList() throws IOException {
+	public void changeToArray() throws IOException {
 		read();
 		int i = 0;
 		
 		for(LocalDate printOne : map.keySet()) {
 			
 			LocalDate keyOne = printOne;
-			//Integer valueOne = map.get(printOne);
+		
 			arrayMap[i] = keyOne;
 			++i;
 		}
@@ -60,7 +60,7 @@ public class DateSortingUsingAlgorithm {
 	
 
 	public void dateHashMapSortedDescending() throws IOException {
-		changeToArrayList();
+		changeToArray();
 		String[] convertDateToString = new String[arrayMap.length];
 		String[] decendArrayMap = new String[arrayMap.length];
 		LocalDate[] decendingDate = new LocalDate[arrayMap.length];
@@ -84,7 +84,7 @@ public class DateSortingUsingAlgorithm {
 
 	}
 	public void dateHashMapSorted() throws IOException {
-		changeToArrayList();
+		changeToArray();
 		String[] convertDateToString2 = new String[arrayMap.length];
 		String[] ascendArrayMap = new String[arrayMap.length];
 		LocalDate[] ascendDate = new LocalDate[arrayMap.length];
@@ -113,7 +113,7 @@ public class DateSortingUsingAlgorithm {
 
 	public String[] ascend(String[] arr) {
 		String temp;
-		//String[] finalArray = new String[arrayMap.length];
+		
 		for (int j = 0; j < arr.length; j++) {
 			for (int i = j + 1; i < arr.length; i++) {
 				// comparing adjacent strings
@@ -130,7 +130,7 @@ public class DateSortingUsingAlgorithm {
 	}
 	public String[] decend(String[] arr) {
 		String temp;
-		//String[] finalArray = new String[arrayMap.length];
+		
 		for (int j = 0; j < arr.length; j++) {
 			for (int i = j + 1; i < arr.length; i++) {
 				
